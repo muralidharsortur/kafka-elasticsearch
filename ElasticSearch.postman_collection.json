@@ -1,0 +1,146 @@
+{
+	"info": {
+		"_postman_id": "f2b90be1-fc64-40cf-b47a-dfb63c9a4bf5",
+		"name": "ElasticSearch",
+		"description": "https://medium.com/@ashish_fagna/getting-started-with-elasticsearch-creating-indices-inserting-values-and-retrieving-data-e3122e9b12c6",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9200/_cat/indices",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"_cat",
+						"indices"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ES Info",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9200/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create-user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\" :\"1\",\n  \"name\" : \"sortur\",\n  \"age\" : \"41\",\n  \"position\" : \"developer\" ,\n  \"department\" : {\n  \t\"id\" : \"1\",\n  \t\"name\" : \"GSD\"\n  },\n  \n   \"organization\" : {\n  \t\"id\" : \"1\",\n  \t\"name\" : \"payment\",\n  \t\"address\" : \"bangalore\"\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9200/sample1/employes/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"sample1",
+						"employes",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9200/sample1/employes/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"sample1",
+						"employes",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all docs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9200/sample1/employes/_search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"sample1",
+						"employes",
+						"_search"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

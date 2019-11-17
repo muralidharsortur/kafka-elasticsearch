@@ -1,0 +1,87 @@
+{
+	"info": {
+		"_postman_id": "43461597-f942-4869-8192-a9d960268e20",
+		"name": "Spring elasticsearch",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create employee",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\" :\"1\",\n  \"name\" : \"hari\",\n  \"age\" : \"41\",\n  \"position\" : \"developer\" ,\n  \"department\" : {\n  \t\"id\" : \"1\",\n  \t\"name\" : \"GSD\"\n  },\n  \n   \"organization\" : {\n  \t\"id\" : \"1\",\n  \t\"name\" : \"payment\",\n  \t\"address\" : \"bangalore\"\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/employees/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Employee",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/employees/Sortur",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees",
+						"Sortur"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get employees of org",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/employees/organization/payment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees",
+						"organization",
+						"payment"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
